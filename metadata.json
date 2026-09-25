@@ -1,0 +1,6 @@
+{
+  "name": "Personalizador de Caixinhas",
+  "description": "Aplicativo para personalizar moldes de caixinhas para papelaria personalizada (Caixa Milk, Pirâmide, Sushi e mais) com fotos em cada lado, textos e exportação PNG em alta qualidade.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
