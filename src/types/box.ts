@@ -2,7 +2,7 @@
  * Type definitions for Box Models, Faces, Text & Clipart Elements, and Export settings
  */
 
-export type BoxModelId = 'milk' | 'piramide' | 'castelo' | 'sushi' | 'bala' | 'cubo';
+export type BoxModelId = 'milk' | 'piramide' | 'castelo' | 'sushi' | 'bala' | 'cubo' | 'bolsinha' | 'sacolinha';
 
 export interface Point {
   x: number;

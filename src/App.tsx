@@ -209,6 +209,60 @@ export default function App() {
           shadow: false,
         },
       ]);
+    } else if (modelId === 'sushi') {
+      setTexts([
+        {
+          id: 'text-initial-sushi-1',
+          text: 'Meu Aniversário',
+          x: 470,
+          y: 340,
+          fontSize: 22,
+          fontFamily: 'Pacifico',
+          color: '#be185d',
+          strokeColor: '#ffffff',
+          strokeWidth: 4,
+          fontWeight: 'bold',
+          rotation: 0,
+          align: 'center',
+          shadow: true,
+        },
+      ]);
+    } else if (modelId === 'bolsinha') {
+      setTexts([
+        {
+          id: 'text-initial-bolsinha-1',
+          text: 'Com Carinho',
+          x: 195,
+          y: 360,
+          fontSize: 24,
+          fontFamily: 'Pacifico',
+          color: '#be185d',
+          strokeColor: '#ffffff',
+          strokeWidth: 4,
+          fontWeight: 'bold',
+          rotation: 0,
+          align: 'center',
+          shadow: true,
+        },
+      ]);
+    } else if (modelId === 'sacolinha') {
+      setTexts([
+        {
+          id: 'text-initial-sacolinha-1',
+          text: 'Obrigado pela Presença!',
+          x: 195,
+          y: 390,
+          fontSize: 20,
+          fontFamily: 'Fredoka',
+          color: '#be185d',
+          strokeColor: '#ffffff',
+          strokeWidth: 3,
+          fontWeight: 'bold',
+          rotation: 0,
+          align: 'center',
+          shadow: true,
+        },
+      ]);
     }
   };
 
@@ -473,7 +527,7 @@ export default function App() {
                   : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
               }`}
             >
-              {tpl.id === 'castelo' ? '🏰 ' : tpl.id === 'piramide' ? '🔺 ' : tpl.id === 'milk' ? '🥛 ' : ''}
+              {tpl.id === 'castelo' ? '🏰 ' : tpl.id === 'piramide' ? '🔺 ' : tpl.id === 'milk' ? '🥛 ' : tpl.id === 'sushi' ? '🍱 ' : tpl.id === 'bolsinha' ? '👜 ' : tpl.id === 'sacolinha' ? '🛍️ ' : tpl.id === 'bala' ? '🍬 ' : '📦 '}
               {tpl.name}
             </button>
           );

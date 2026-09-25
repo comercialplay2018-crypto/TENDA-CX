@@ -544,106 +544,799 @@ export const CAIXA_PIRAMIDE_TEMPLATE: BoxTemplate = {
 };
 
 // ----------------------------------------------------
-// 3. CAIXA SUSHI (Outro grande sucesso em festas infantis)
+// 3. CAIXA SUSHI (Gabarito 100% fiel da foto: abas e fundo perfeitamente alinhados e ortogonais a cada face!)
 // ----------------------------------------------------
+// Virtual Canvas: 1000 x 740 (A4 Paisagem)
+// Formato em leque com 4 faces trapezoidais cônicas (7,5cm topo x 5,5cm base x 6,5cm altura)
+// Cada aba superior e aba do fundo é projetada estritamente perpendicular à sua respectiva aresta
+// Quando montada, as peças do fundo e da tampa fecham com exatidão matemática sem brechas
 const sushiPanels: BoxPanel[] = [
-  createPanel('sushi_glue', 'Aba Colagem', 'Aba', 'glue_tab', [
-    { x: 70, y: 220 },
-    { x: 120, y: 220 },
-    { x: 140, y: 520 },
-    { x: 90, y: 520 },
-  ]),
-  createPanel('sushi_face_1', 'Lateral Esquerda', 'Lat. Esq.', 'main_face', [
-    { x: 120, y: 220 },
-    { x: 300, y: 220 },
-    { x: 280, y: 520 },
-    { x: 140, y: 520 },
-  ]),
-  createPanel('sushi_face_front', 'Frente', 'Frente', 'main_face', [
-    { x: 300, y: 220 },
-    { x: 480, y: 220 },
-    { x: 460, y: 520 },
-    { x: 280, y: 520 },
-  ]),
-  createPanel('sushi_face_right', 'Lateral Direita', 'Lat. Dir.', 'main_face', [
-    { x: 480, y: 220 },
-    { x: 660, y: 220 },
-    { x: 640, y: 520 },
-    { x: 460, y: 520 },
-  ]),
-  createPanel('sushi_face_back', 'Verso', 'Verso', 'main_face', [
-    { x: 660, y: 220 },
-    { x: 840, y: 220 },
-    { x: 820, y: 520 },
-    { x: 640, y: 520 },
-  ]),
-  createPanel('sushi_top_front', 'Alça / Topo Frente', 'Topo Frente', 'roof', [
-    { x: 300, y: 220 },
-    { x: 480, y: 220 },
-    { x: 450, y: 110 },
-    { x: 330, y: 110 },
-  ]),
-  createPanel('sushi_top_back', 'Alça / Topo Verso', 'Topo Verso', 'roof', [
-    { x: 660, y: 220 },
-    { x: 840, y: 220 },
-    { x: 810, y: 110 },
-    { x: 690, y: 110 },
-  ]),
-  createPanel('sushi_bottom', 'Fundo Encaixe', 'Fundo', 'bottom', [
-    { x: 280, y: 520 },
-    { x: 460, y: 520 },
-    { x: 440, y: 640 },
-    { x: 300, y: 640 },
-  ]),
+  // Aba de colagem lateral esquerda da Face 1
+  createPanel(
+    'sushi_glue',
+    'Aba Colagem Lateral',
+    'Aba Colagem',
+    'glue_tab',
+    [
+      { x: 165, y: 313 },
+      { x: 140, y: 342 },
+      { x: 208, y: 480 },
+      { x: 246, y: 478 },
+    ],
+    'Aba de colagem lateral para fechar a caixa sushi'
+  ),
+
+  // Face 1: Lateral Esquerda
+  createPanel(
+    'sushi_face_1',
+    'Face 1 (Lateral Esquerda)',
+    'Lat. Esq.',
+    'main_face',
+    [
+      { x: 165, y: 313 },
+      { x: 365, y: 250 },
+      { x: 393, y: 432 },
+      { x: 246, y: 478 },
+    ],
+    'Primeira face trapezoidal da caixa sushi (7,5cm x 5,5cm x 6,5cm)',
+    { x: 292, y: 368 }
+  ),
+
+  // Face 2: Frente Principal (Base horizontal perfeitamente nivelada)
+  createPanel(
+    'sushi_face_2',
+    'Face 2 (Frente Principal)',
+    'Frente (Face 2)',
+    'main_face',
+    [
+      { x: 365, y: 250 },
+      { x: 575, y: 250 },
+      { x: 547, y: 432 },
+      { x: 393, y: 432 },
+    ],
+    'Fachada frontal da caixa sushi - ideal para a arte principal, nome e tema',
+    { x: 470, y: 341 }
+  ),
+
+  // Face 3: Lateral Direita
+  createPanel(
+    'sushi_face_3',
+    'Face 3 (Lateral Direita)',
+    'Lat. Dir.',
+    'main_face',
+    [
+      { x: 575, y: 250 },
+      { x: 775, y: 313 },
+      { x: 694, y: 478 },
+      { x: 547, y: 432 },
+    ],
+    'Terceira face trapezoidal da caixa sushi',
+    { x: 648, y: 368 }
+  ),
+
+  // Face 4: Verso / Costas (com alça de fecho)
+  createPanel(
+    'sushi_face_4',
+    'Face 4 (Verso / Costas)',
+    'Verso (Face 4)',
+    'main_face',
+    [
+      { x: 775, y: 313 },
+      { x: 947, y: 434 },
+      { x: 820, y: 567 },
+      { x: 694, y: 478 },
+    ],
+    'Quarta face trapezoidal da caixa sushi',
+    { x: 809, y: 448 }
+  ),
+
+  // Abas Superiores (Cada aba ortogonal à aresta superior da sua respectiva face)
+  createPanel(
+    'sushi_top_1',
+    'Aba Superior Lateral Esq',
+    'Topo Esq.',
+    'roof',
+    [
+      { x: 165, y: 313 },
+      { x: 157, y: 221 },
+      { x: 319, y: 170 },
+      { x: 365, y: 250 },
+    ],
+    'Aba superior esquerda de apoio interno'
+  ),
+
+  createPanel(
+    'sushi_top_2',
+    'Aba Superior com Fenda (Frente)',
+    'Topo Frente',
+    'roof',
+    [
+      { x: 365, y: 250 },
+      { x: 385, y: 140 },
+      { x: 555, y: 140 },
+      { x: 575, y: 250 },
+    ],
+    'Aba superior frontal reta com fenda de travamento'
+  ),
+
+  createPanel(
+    'sushi_top_3',
+    'Aba Superior Lateral Dir',
+    'Topo Dir.',
+    'roof',
+    [
+      { x: 575, y: 250 },
+      { x: 621, y: 170 },
+      { x: 783, y: 221 },
+      { x: 775, y: 313 },
+    ],
+    'Aba superior direita de apoio interno'
+  ),
+
+  createPanel(
+    'sushi_top_4',
+    'Aba Superior com Alça Trava (Verso)',
+    'Topo Alça',
+    'roof',
+    [
+      { x: 775, y: 313 },
+      { x: 855, y: 234 },
+      { x: 896, y: 263 },
+      { x: 930, y: 215 },
+      { x: 953, y: 303 },
+      { x: 994, y: 332 },
+      { x: 947, y: 434 },
+    ],
+    'Aba superior traseira com alça curva em meia-lua alinhada com a fenda frontal'
+  ),
+
+  // Abas do Fundo (Cada aba ortogonal à aresta inferior da sua respectiva face)
+  createPanel(
+    'sushi_bottom_1',
+    'Aba Fundo 1 (Esq)',
+    'Fundo 1',
+    'bottom',
+    [
+      { x: 246, y: 478 },
+      { x: 290, y: 569 },
+      { x: 404, y: 533 },
+      { x: 393, y: 432 },
+    ],
+    'Aba de apoio lateral esquerda ortogonal à aresta'
+  ),
+
+  createPanel(
+    'sushi_bottom_2',
+    'Aba Fundo 2 (Base Quadrada)',
+    'Fundo Frente',
+    'bottom',
+    [
+      { x: 393, y: 432 },
+      { x: 393, y: 586 },
+      { x: 415, y: 621 },
+      { x: 525, y: 621 },
+      { x: 547, y: 586 },
+      { x: 547, y: 432 },
+    ],
+    'Base quadrada de 5,5 x 5,5 cm com aba de trava'
+  ),
+
+  createPanel(
+    'sushi_bottom_3',
+    'Aba Fundo 3 (Dir)',
+    'Fundo 3',
+    'bottom',
+    [
+      { x: 547, y: 432 },
+      { x: 536, y: 533 },
+      { x: 650, y: 569 },
+      { x: 694, y: 478 },
+    ],
+    'Aba de apoio lateral direita ortogonal à aresta'
+  ),
+
+  createPanel(
+    'sushi_bottom_4',
+    'Aba Fundo 4 (Verso)',
+    'Fundo Verso',
+    'bottom',
+    [
+      { x: 694, y: 478 },
+      { x: 653, y: 572 },
+      { x: 746, y: 637 },
+      { x: 820, y: 567 },
+    ],
+    'Aba inferior traseira ortogonal à aresta'
+  ),
 ];
 
 export const CAIXA_SUSHI_TEMPLATE: BoxTemplate = {
   id: 'sushi',
   name: 'Caixa Sushi',
-  subtitle: 'Design trapezoidal charmoso para docinhos e mimos',
-  description: 'Caixa com base cônica invertida e abas superiores decorativas de encaixe.',
-  widthMm: 70,
-  heightMm: 75,
-  depthMm: 60,
-  canvasWidth: 950,
-  canvasHeight: 700,
+  subtitle: 'Molde fiel da foto: 7,5 x 5,5 x 6,5 cm com alinhamento ortogonal perfeito',
+  description: 'Caixa sushi cônica em leque com peças do fundo e tampa perfeitamente alinhadas a cada face para encaixe e colagem sem desvios.',
+  widthMm: 75,
+  heightMm: 65,
+  depthMm: 55,
+  canvasWidth: 1000,
+  canvasHeight: 740,
   sheetFormat: 'A4 Paisagem',
-  recommendedPaper: 'Papel Fotográfico Matte ou Glossy 180g / 230g',
+  recommendedPaper: 'Papel Fotográfico Matte ou Glossy 180g / 230g ou Offset 180g',
   panels: sushiPanels,
   cutLines: [
+    // Contorno externo total de corte (cortes ortogonais exatos a cada face)
     {
-      id: 'sushi_cut',
+      id: 'sushi_cut_outer',
       type: 'cut',
       d: `
-        M 120 220
-        L 300 220
-        L 330 110
-        L 450 110
-        L 480 220
-        L 660 220
-        L 690 110
-        L 810 110
-        L 840 220
-        L 820 520
-        L 640 520
-        L 460 520
-        L 440 640
-        L 300 640
-        L 280 520
-        L 140 520
-        L 90 520
-        L 70 220
+        M 165 313
+        L 140 342
+        L 208 480
+        L 246 478
+        L 290 569
+        L 404 533
+        L 393 432
+        L 393 586
+        L 415 621
+        L 525 621
+        L 547 586
+        L 547 432
+        L 536 533
+        L 650 569
+        L 694 478
+        L 653 572
+        L 746 637
+        L 820 567
+        L 947 434
+        L 994 332
+        L 953 303
+        C 975 255, 955 205, 930 215
+        C 905 225, 885 270, 896 263
+        L 855 234
+        L 775 313
+        L 783 221
+        L 621 170
+        L 575 250
+        L 555 140
+        L 385 140
+        L 365 250
+        L 319 170
+        L 157 221
+        L 165 313
         Z
       `,
     },
+    // Fenda horizontal de corte no topo da Face 2 para travar a alça
+    {
+      id: 'sushi_cut_slit',
+      type: 'cut',
+      d: 'M 425 165 L 515 165',
+    },
+    // Fendas de corte entre as abas do fundo para desdobramento independente
+    { id: 'sushi_cut_bot_slit1', type: 'cut', d: 'M 393 432 L 398 460' },
+    { id: 'sushi_cut_bot_slit2', type: 'cut', d: 'M 547 432 L 542 460' },
+    { id: 'sushi_cut_bot_slit3', type: 'cut', d: 'M 694 478 L 685 505' },
   ],
   creaseLines: [
-    { id: 'sushi_c_top', type: 'crease', d: 'M 120 220 L 840 220' },
-    { id: 'sushi_c_bottom', type: 'crease', d: 'M 140 520 L 820 520' },
-    { id: 'sushi_c_v1', type: 'crease', d: 'M 120 220 L 140 520' },
-    { id: 'sushi_c_v2', type: 'crease', d: 'M 300 220 L 280 520' },
-    { id: 'sushi_c_v3', type: 'crease', d: 'M 480 220 L 460 520' },
-    { id: 'sushi_c_v4', type: 'crease', d: 'M 660 220 L 640 520' },
+    // Vincos entre as 4 faces trapezoidais
+    { id: 'sushi_c_glue', type: 'crease', d: 'M 165 313 L 246 478' },
+    { id: 'sushi_c_v1', type: 'crease', d: 'M 365 250 L 393 432' },
+    { id: 'sushi_c_v2', type: 'crease', d: 'M 575 250 L 547 432' },
+    { id: 'sushi_c_v3', type: 'crease', d: 'M 775 313 L 694 478' },
+    // Vincos superiores (entre faces e abas do topo)
+    { id: 'sushi_c_top1', type: 'crease', d: 'M 165 313 L 365 250' },
+    { id: 'sushi_c_top2', type: 'crease', d: 'M 365 250 L 575 250' },
+    { id: 'sushi_c_top3', type: 'crease', d: 'M 575 250 L 775 313' },
+    { id: 'sushi_c_top4', type: 'crease', d: 'M 775 313 L 947 434' },
+    // Vincos inferiores (entre faces e abas do fundo)
+    { id: 'sushi_c_bot1', type: 'crease', d: 'M 246 478 L 393 432' },
+    { id: 'sushi_c_bot2', type: 'crease', d: 'M 393 432 L 547 432' },
+    { id: 'sushi_c_bot3', type: 'crease', d: 'M 547 432 L 694 478' },
+    { id: 'sushi_c_bot4', type: 'crease', d: 'M 694 478 L 820 567' },
+    // Vinco da aba de trava do fundo
+    { id: 'sushi_c_bot_tuck', type: 'crease', d: 'M 393 586 L 547 586' },
+  ],
+};
+
+// ----------------------------------------------------
+// 7. CAIXA BOLSINHA (Gabarito da foto: Alças Arredondadas Duplas Vazadas de Dia das Mães / Lembrancinhas)
+// ----------------------------------------------------
+const bolsinhaPanels: BoxPanel[] = [
+  // Face 1: Frente
+  createPanel(
+    'bolsinha_face_1',
+    'Frente Principal',
+    'Frente',
+    'main_face',
+    [
+      { x: 80, y: 240 },
+      { x: 310, y: 240 },
+      { x: 310, y: 510 },
+      { x: 80, y: 510 },
+    ],
+    'Fachada frontal da bolsinha (230 x 270 px)',
+    { x: 195, y: 375 }
+  ),
+
+  // Alça Superior Frontal Arredondada com Vazio
+  createPanel(
+    'bolsinha_handle_front',
+    'Alça Superior Frente',
+    'Alça Frente',
+    'roof',
+    [
+      { x: 80, y: 240 },
+      { x: 80, y: 170 },
+      { x: 140, y: 90 },
+      { x: 250, y: 90 },
+      { x: 310, y: 170 },
+      { x: 310, y: 240 },
+    ],
+    'Alça curva arredondada com vazado oval'
+  ),
+
+  // Face 2: Lateral Esquerda (Fole com Vinco Sanfonado)
+  createPanel(
+    'bolsinha_face_2',
+    'Lateral Esquerda (Fole)',
+    'Lat. Esq.',
+    'main_face',
+    [
+      { x: 310, y: 240 },
+      { x: 430, y: 240 },
+      { x: 430, y: 510 },
+      { x: 310, y: 510 },
+    ],
+    'Lateral com dobra sanfonada tipo fole',
+    { x: 370, y: 375 }
+  ),
+
+  // Face 3: Verso (Costas)
+  createPanel(
+    'bolsinha_face_3',
+    'Verso / Costas',
+    'Verso',
+    'main_face',
+    [
+      { x: 430, y: 240 },
+      { x: 660, y: 240 },
+      { x: 660, y: 510 },
+      { x: 430, y: 510 },
+    ],
+    'Parte traseira da bolsinha (230 x 270 px)',
+    { x: 545, y: 375 }
+  ),
+
+  // Alça Superior Traseira Arredondada com Vazio
+  createPanel(
+    'bolsinha_handle_back',
+    'Alça Superior Verso',
+    'Alça Verso',
+    'roof',
+    [
+      { x: 430, y: 240 },
+      { x: 430, y: 170 },
+      { x: 490, y: 90 },
+      { x: 600, y: 90 },
+      { x: 660, y: 170 },
+      { x: 660, y: 240 },
+    ],
+    'Segunda alça que se une à alça frontal ao fechar'
+  ),
+
+  // Face 4: Lateral Direita (Fole com Vinco Sanfonado)
+  createPanel(
+    'bolsinha_face_4',
+    'Lateral Direita (Fole)',
+    'Lat. Dir.',
+    'main_face',
+    [
+      { x: 660, y: 240 },
+      { x: 780, y: 240 },
+      { x: 780, y: 510 },
+      { x: 660, y: 510 },
+    ],
+    'Lateral direita com dobra sanfonada tipo fole',
+    { x: 720, y: 375 }
+  ),
+
+  // Aba de Colagem Lateral
+  createPanel(
+    'bolsinha_glue',
+    'Aba de Colagem Lateral',
+    'Aba Colagem',
+    'glue_tab',
+    [
+      { x: 780, y: 240 },
+      { x: 830, y: 260 },
+      { x: 830, y: 490 },
+      { x: 780, y: 510 },
+    ],
+    'Aba lateral para colagem'
+  ),
+
+  // Abas do Fundo de Encaixe Fácil
+  createPanel(
+    'bolsinha_bottom_1',
+    'Aba Fundo Frente',
+    'Fundo Frente',
+    'bottom',
+    [
+      { x: 80, y: 510 },
+      { x: 310, y: 510 },
+      { x: 280, y: 640 },
+      { x: 130, y: 640 },
+    ],
+    'Aba principal do fundo'
+  ),
+
+  createPanel(
+    'bolsinha_bottom_2',
+    'Aba Fundo Esq',
+    'Fundo Esq',
+    'bottom',
+    [
+      { x: 310, y: 510 },
+      { x: 430, y: 510 },
+      { x: 410, y: 610 },
+      { x: 330, y: 610 },
+    ],
+    'Aba lateral de apoio'
+  ),
+
+  createPanel(
+    'bolsinha_bottom_3',
+    'Aba Fundo Verso',
+    'Fundo Verso',
+    'bottom',
+    [
+      { x: 430, y: 510 },
+      { x: 660, y: 510 },
+      { x: 630, y: 640 },
+      { x: 480, y: 640 },
+    ],
+    'Aba com encaixe em gancho'
+  ),
+
+  createPanel(
+    'bolsinha_bottom_4',
+    'Aba Fundo Dir',
+    'Fundo Dir',
+    'bottom',
+    [
+      { x: 660, y: 510 },
+      { x: 780, y: 510 },
+      { x: 760, y: 610 },
+      { x: 680, y: 610 },
+    ],
+    'Aba lateral de apoio'
+  ),
+];
+
+export const CAIXA_BOLSINHA_TEMPLATE: BoxTemplate = {
+  id: 'bolsinha',
+  name: 'Caixa Bolsinha',
+  subtitle: 'Alças arredondadas duplas vazadas (Dia das Mães e Mimos)',
+  description: 'Gabarito clássico com 2 alças curvas que se unem no topo, visor vazado, laterais sanfonadas e fundo de montagem rápida.',
+  widthMm: 75,
+  heightMm: 110,
+  depthMm: 45,
+  canvasWidth: 1000,
+  canvasHeight: 740,
+  sheetFormat: 'A4 Paisagem',
+  recommendedPaper: 'Papel Fotográfico Matte ou Glossy 180g / 230g ou Offset 180g',
+  panels: bolsinhaPanels,
+  cutLines: [
+    // Contorno externo total de corte
+    {
+      id: 'bolsinha_cut_outer',
+      type: 'cut',
+      d: `
+        M 80 240
+        L 80 170
+        C 80 100, 130 90, 195 90
+        C 260 90, 310 100, 310 170
+        L 310 240
+        L 430 240
+        L 430 170
+        C 430 100, 480 90, 545 90
+        C 610 90, 660 100, 660 170
+        L 660 240
+        L 780 240
+        L 830 260
+        L 830 490
+        L 780 510
+        L 780 510
+        L 760 610 L 680 610 L 660 510
+        L 630 640 L 480 640 L 430 510
+        L 410 610 L 330 610 L 310 510
+        L 280 640 L 130 640 L 80 510
+        Z
+      `,
+    },
+    // Vazio oval da alça frontal
+    {
+      id: 'bolsinha_handle_cut_front',
+      type: 'cut',
+      d: 'M 140 182 C 140 160, 160 160, 195 160 C 230 160, 250 160, 250 182 C 250 205, 230 205, 195 205 C 160 205, 140 205, 140 182 Z',
+    },
+    // Vazio oval da alça traseira
+    {
+      id: 'bolsinha_handle_cut_back',
+      type: 'cut',
+      d: 'M 490 182 C 490 160, 510 160, 545 160 C 580 160, 600 160, 600 182 C 600 205, 580 205, 545 205 C 510 205, 490 205, 490 182 Z',
+    },
+  ],
+  creaseLines: [
+    // Vinco horizontal superior (entre corpo e alças)
+    { id: 'bolsinha_c_top1', type: 'crease', d: 'M 80 240 L 310 240' },
+    { id: 'bolsinha_c_top2', type: 'crease', d: 'M 430 240 L 660 240' },
+    // Vincos verticais entre as 4 faces
+    { id: 'bolsinha_c_v1', type: 'crease', d: 'M 310 240 L 310 510' },
+    { id: 'bolsinha_c_v2', type: 'crease', d: 'M 430 240 L 430 510' },
+    { id: 'bolsinha_c_v3', type: 'crease', d: 'M 660 240 L 660 510' },
+    { id: 'bolsinha_c_v4', type: 'crease', d: 'M 780 240 L 780 510' },
+    // Vincos centrais das laterais sanfonadas (foles)
+    { id: 'bolsinha_c_fole_left', type: 'crease', d: 'M 370 240 L 370 460' },
+    { id: 'bolsinha_c_fole_left_d1', type: 'crease', d: 'M 310 510 L 370 460' },
+    { id: 'bolsinha_c_fole_left_d2', type: 'crease', d: 'M 430 510 L 370 460' },
+    { id: 'bolsinha_c_fole_right', type: 'crease', d: 'M 720 240 L 720 460' },
+    { id: 'bolsinha_c_fole_right_d1', type: 'crease', d: 'M 660 510 L 720 460' },
+    { id: 'bolsinha_c_fole_right_d2', type: 'crease', d: 'M 780 510 L 720 460' },
+    // Vinco horizontal inferior do fundo
+    { id: 'bolsinha_c_bottom', type: 'crease', d: 'M 80 510 L 780 510' },
+  ],
+};
+
+// ----------------------------------------------------
+// 8. CAIXA SACOLINHA (Gabarito da foto: Tampa com Aba Curva e Alça Passante / Mimos)
+// ----------------------------------------------------
+const sacolinhaPanels: BoxPanel[] = [
+  // Face 1: Frente com Alça Passante
+  createPanel(
+    'sacolinha_face_1',
+    'Frente Principal',
+    'Frente',
+    'main_face',
+    [
+      { x: 80, y: 250 },
+      { x: 310, y: 250 },
+      { x: 310, y: 520 },
+      { x: 80, y: 520 },
+    ],
+    'Fachada frontal com recorte de alça vazada (230 x 270 px)',
+    { x: 195, y: 385 }
+  ),
+
+  // Aba Curva Superior Dobrável (Tampa)
+  createPanel(
+    'sacolinha_flap_front',
+    'Aba Superior Dobrável (Tampa)',
+    'Tampa / Aba',
+    'roof',
+    [
+      { x: 80, y: 250 },
+      { x: 80, y: 170 },
+      { x: 130, y: 110 },
+      { x: 260, y: 110 },
+      { x: 310, y: 170 },
+      { x: 310, y: 250 },
+    ],
+    'Aba curva que dobra para frente alinhando a alça'
+  ),
+
+  // Face 2: Lateral Esquerda (Fole Sanfonado)
+  createPanel(
+    'sacolinha_face_2',
+    'Lateral Esquerda (Fole)',
+    'Lat. Esq.',
+    'main_face',
+    [
+      { x: 310, y: 250 },
+      { x: 430, y: 250 },
+      { x: 430, y: 520 },
+      { x: 310, y: 520 },
+    ],
+    'Lateral dobrável tipo fole',
+    { x: 370, y: 385 }
+  ),
+
+  // Face 3: Verso (Costas)
+  createPanel(
+    'sacolinha_face_3',
+    'Verso / Costas',
+    'Verso',
+    'main_face',
+    [
+      { x: 430, y: 250 },
+      { x: 660, y: 250 },
+      { x: 660, y: 520 },
+      { x: 430, y: 520 },
+    ],
+    'Parte traseira com alça passante (230 x 270 px)',
+    { x: 545, y: 385 }
+  ),
+
+  // Aba de Encaixe Superior Traseira
+  createPanel(
+    'sacolinha_top_back',
+    'Aba Superior Traseira',
+    'Aba Verso',
+    'roof',
+    [
+      { x: 430, y: 250 },
+      { x: 450, y: 195 },
+      { x: 640, y: 195 },
+      { x: 660, y: 250 },
+    ],
+    'Aba de reforço traseira'
+  ),
+
+  // Face 4: Lateral Direita (Fole Sanfonado)
+  createPanel(
+    'sacolinha_face_4',
+    'Lateral Direita (Fole)',
+    'Lat. Dir.',
+    'main_face',
+    [
+      { x: 660, y: 250 },
+      { x: 780, y: 250 },
+      { x: 780, y: 520 },
+      { x: 660, y: 520 },
+    ],
+    'Lateral direita tipo fole',
+    { x: 720, y: 385 }
+  ),
+
+  // Aba Lateral de Colagem
+  createPanel(
+    'sacolinha_glue',
+    'Aba de Colagem Lateral',
+    'Aba Colagem',
+    'glue_tab',
+    [
+      { x: 780, y: 250 },
+      { x: 830, y: 270 },
+      { x: 830, y: 500 },
+      { x: 780, y: 520 },
+    ],
+    'Aba lateral para colagem'
+  ),
+
+  // Abas do Fundo
+  createPanel(
+    'sacolinha_bottom_1',
+    'Aba Fundo Frente',
+    'Fundo Frente',
+    'bottom',
+    [
+      { x: 80, y: 520 },
+      { x: 310, y: 520 },
+      { x: 280, y: 650 },
+      { x: 130, y: 650 },
+    ],
+    'Aba de fundo frontal'
+  ),
+
+  createPanel(
+    'sacolinha_bottom_2',
+    'Aba Fundo Esq',
+    'Fundo Esq',
+    'bottom',
+    [
+      { x: 310, y: 520 },
+      { x: 430, y: 520 },
+      { x: 410, y: 620 },
+      { x: 330, y: 620 },
+    ],
+    'Aba de apoio esquerda'
+  ),
+
+  createPanel(
+    'sacolinha_bottom_3',
+    'Aba Fundo Verso',
+    'Fundo Verso',
+    'bottom',
+    [
+      { x: 430, y: 520 },
+      { x: 660, y: 520 },
+      { x: 630, y: 650 },
+      { x: 480, y: 650 },
+    ],
+    'Aba de fundo verso'
+  ),
+
+  createPanel(
+    'sacolinha_bottom_4',
+    'Aba Fundo Dir',
+    'Fundo Dir',
+    'bottom',
+    [
+      { x: 660, y: 520 },
+      { x: 780, y: 520 },
+      { x: 760, y: 620 },
+      { x: 680, y: 620 },
+    ],
+    'Aba de apoio direita'
+  ),
+];
+
+export const CAIXA_SACOLINHA_TEMPLATE: BoxTemplate = {
+  id: 'sacolinha',
+  name: 'Caixa Sacolinha',
+  subtitle: 'Tampa com aba curva e alça passante vazada',
+  description: 'Gabarito de sacola elegante com tampa curva dobrável, alças ovais alinhadas e laterais sanfonadas.',
+  widthMm: 75,
+  heightMm: 110,
+  depthMm: 45,
+  canvasWidth: 1000,
+  canvasHeight: 740,
+  sheetFormat: 'A4 Paisagem',
+  recommendedPaper: 'Papel Fotográfico Matte ou Glossy 180g / 230g ou Offset 180g',
+  panels: sacolinhaPanels,
+  cutLines: [
+    // Contorno externo total de corte
+    {
+      id: 'sacolinha_cut_outer',
+      type: 'cut',
+      d: `
+        M 80 250
+        L 80 170
+        C 80 110, 130 110, 195 110
+        C 260 110, 310 110, 310 170
+        L 310 250
+        L 430 250
+        L 450 195
+        L 640 195
+        L 660 250
+        L 780 250
+        L 830 270
+        L 830 500
+        L 780 520
+        L 760 620 L 680 620 L 660 520
+        L 630 650 L 480 650 L 430 520
+        L 410 620 L 330 620 L 310 520
+        L 280 650 L 130 650 L 80 520
+        Z
+      `,
+    },
+    // Vazio oval da aba superior dobrável
+    {
+      id: 'sacolinha_handle_cut_flap',
+      type: 'cut',
+      d: 'M 145 160 C 145 145, 160 145, 195 145 C 230 145, 245 145, 245 160 C 245 175, 230 175, 195 175 C 160 175, 145 175, 145 160 Z',
+    },
+    // Vazio oval da face frontal
+    {
+      id: 'sacolinha_handle_cut_front',
+      type: 'cut',
+      d: 'M 145 300 C 145 285, 160 285, 195 285 C 230 285, 245 285, 245 300 C 245 315, 230 315, 195 315 C 160 315, 145 315, 145 300 Z',
+    },
+    // Vazio oval da face traseira
+    {
+      id: 'sacolinha_handle_cut_back',
+      type: 'cut',
+      d: 'M 495 300 C 495 285, 510 285, 545 285 C 580 285, 595 285, 595 300 C 595 315, 580 315, 545 315 C 510 315, 495 315, 495 300 Z',
+    },
+  ],
+  creaseLines: [
+    // Vinco da aba superior dobrável
+    { id: 'sacolinha_c_top1', type: 'crease', d: 'M 80 250 L 310 250' },
+    { id: 'sacolinha_c_top2', type: 'crease', d: 'M 430 250 L 660 250' },
+    // Vincos verticais entre as 4 faces
+    { id: 'sacolinha_c_v1', type: 'crease', d: 'M 310 250 L 310 520' },
+    { id: 'sacolinha_c_v2', type: 'crease', d: 'M 430 250 L 430 520' },
+    { id: 'sacolinha_c_v3', type: 'crease', d: 'M 660 250 L 660 520' },
+    { id: 'sacolinha_c_v4', type: 'crease', d: 'M 780 250 L 780 520' },
+    // Vincos das laterais tipo fole
+    { id: 'sacolinha_c_fole_left', type: 'crease', d: 'M 370 250 L 370 470' },
+    { id: 'sacolinha_c_fole_left_d1', type: 'crease', d: 'M 310 520 L 370 470' },
+    { id: 'sacolinha_c_fole_left_d2', type: 'crease', d: 'M 430 520 L 370 470' },
+    { id: 'sacolinha_c_fole_right', type: 'crease', d: 'M 720 250 L 720 470' },
+    { id: 'sacolinha_c_fole_right_d1', type: 'crease', d: 'M 660 520 L 720 470' },
+    { id: 'sacolinha_c_fole_right_d2', type: 'crease', d: 'M 780 520 L 720 470' },
+    // Vinco horizontal inferior do fundo
+    { id: 'sacolinha_c_bottom', type: 'crease', d: 'M 80 520 L 780 520' },
   ],
 };
 
@@ -1164,6 +1857,8 @@ export const ALL_BOX_TEMPLATES: BoxTemplate[] = [
   CAIXA_PIRAMIDE_TEMPLATE,
   CAIXA_CASTELO_TEMPLATE,
   CAIXA_SUSHI_TEMPLATE,
+  CAIXA_BOLSINHA_TEMPLATE,
+  CAIXA_SACOLINHA_TEMPLATE,
   CAIXA_BALA_TEMPLATE,
   CAIXA_CUBO_TEMPLATE,
 ];

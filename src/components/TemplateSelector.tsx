@@ -157,8 +157,62 @@ export const TemplateSelector: React.FC<TemplateSelectorProps> = ({
                       </svg>
                     )}
                     {tpl.id === 'sushi' && (
-                      <svg viewBox="0 0 950 700" className="w-full h-full max-h-28 sm:max-h-32 object-contain stroke-slate-700">
-                        <polygon points="120,220 840,220 820,520 140,520" fill="#fdf2f8" strokeWidth="10" />
+                      <svg viewBox="0 0 1000 740" className="w-full h-full max-h-28 sm:max-h-32 object-contain stroke-slate-700">
+                        {/* 4 Fan Trapezoid Panels */}
+                        <polygon points="165,313 365,250 393,432 246,478" fill="#fdf2f8" strokeWidth="8" />
+                        <polygon points="365,250 575,250 547,432 393,432" fill="#fce7f3" strokeWidth="8" />
+                        <polygon points="575,250 775,313 694,478 547,432" fill="#fdf2f8" strokeWidth="8" />
+                        <polygon points="775,313 947,434 820,567 694,478" fill="#fce7f3" strokeWidth="8" />
+                        {/* Top Flap with Slit on Face 2 */}
+                        <polygon points="365,250 385,140 555,140 575,250" fill="#fbcfe8" strokeWidth="6" />
+                        <line x1="425" y1="165" x2="515" y2="165" stroke="#be185d" strokeWidth="8" />
+                        {/* Top Flap with Loop on Face 4 */}
+                        <polygon points="775,313 855,234 994,332 947,434" fill="#fbcfe8" strokeWidth="6" />
+                        {/* Bottom square flap on Face 2 */}
+                        <polygon points="393,432 393,586 415,621 525,621 547,586 547,432" fill="#fbcfe8" strokeWidth="6" />
+                        {/* Creases */}
+                        <line x1="365" y1="250" x2="393" y2="432" stroke="#f43f5e" strokeWidth="6" strokeDasharray="12 12" />
+                        <line x1="575" y1="250" x2="547" y2="432" stroke="#f43f5e" strokeWidth="6" strokeDasharray="12 12" />
+                        <line x1="775" y1="313" x2="694" y2="478" stroke="#f43f5e" strokeWidth="6" strokeDasharray="12 12" />
+                      </svg>
+                    )}
+                    {tpl.id === 'bolsinha' && (
+                      <svg viewBox="0 0 950 740" className="w-full h-full max-h-28 sm:max-h-32 object-contain stroke-slate-700">
+                        {/* Body 4 panels */}
+                        <rect x="80" y="240" width="230" height="270" fill="#fdf2f8" strokeWidth="8" />
+                        <rect x="310" y="240" width="120" height="270" fill="#f8fafc" strokeWidth="6" />
+                        <rect x="430" y="240" width="230" height="270" fill="#fdf2f8" strokeWidth="8" />
+                        <rect x="660" y="240" width="120" height="270" fill="#f8fafc" strokeWidth="6" />
+                        {/* Two Rounded Arch Handles */}
+                        <path d="M 80 240 C 80 100, 130 90, 195 90 C 260 90, 310 100, 310 240 Z" fill="#fbcfe8" strokeWidth="8" />
+                        <path d="M 430 240 C 430 100, 480 90, 545 90 C 610 90, 660 100, 660 240 Z" fill="#fbcfe8" strokeWidth="8" />
+                        {/* Oval handle cutouts */}
+                        <rect x="145" y="160" width="100" height="45" rx="20" fill="#ffffff" stroke="#db2777" strokeWidth="6" />
+                        <rect x="495" y="160" width="100" height="45" rx="20" fill="#ffffff" stroke="#db2777" strokeWidth="6" />
+                        {/* Fold lines */}
+                        <line x1="80" y1="240" x2="310" y2="240" stroke="#f43f5e" strokeWidth="6" strokeDasharray="12 12" />
+                        <line x1="430" y1="240" x2="660" y2="240" stroke="#f43f5e" strokeWidth="6" strokeDasharray="12 12" />
+                        <line x1="370" y1="240" x2="370" y2="510" stroke="#94a3b8" strokeWidth="4" strokeDasharray="8 8" />
+                        <line x1="720" y1="240" x2="720" y2="510" stroke="#94a3b8" strokeWidth="4" strokeDasharray="8 8" />
+                      </svg>
+                    )}
+                    {tpl.id === 'sacolinha' && (
+                      <svg viewBox="0 0 950 740" className="w-full h-full max-h-28 sm:max-h-32 object-contain stroke-slate-700">
+                        {/* Body 4 panels */}
+                        <rect x="80" y="250" width="230" height="270" fill="#fdf2f8" strokeWidth="8" />
+                        <rect x="310" y="250" width="120" height="270" fill="#f8fafc" strokeWidth="6" />
+                        <rect x="430" y="250" width="230" height="270" fill="#fdf2f8" strokeWidth="8" />
+                        <rect x="660" y="250" width="120" height="270" fill="#f8fafc" strokeWidth="6" />
+                        {/* Fold-over flap */}
+                        <path d="M 80 250 C 80 110, 130 110, 195 110 C 260 110, 310 110, 310 250 Z" fill="#fbcfe8" strokeWidth="8" />
+                        {/* Flap handle cutout */}
+                        <rect x="145" y="150" width="100" height="40" rx="20" fill="#ffffff" stroke="#db2777" strokeWidth="6" />
+                        {/* Front handle cutout */}
+                        <rect x="145" y="295" width="100" height="40" rx="20" fill="#ffffff" stroke="#db2777" strokeWidth="6" />
+                        {/* Back handle cutout */}
+                        <rect x="495" y="295" width="100" height="40" rx="20" fill="#ffffff" stroke="#db2777" strokeWidth="6" />
+                        {/* Fold lines */}
+                        <line x1="80" y1="250" x2="310" y2="250" stroke="#f43f5e" strokeWidth="6" strokeDasharray="12 12" />
                       </svg>
                     )}
                     {tpl.id === 'bala' && (
